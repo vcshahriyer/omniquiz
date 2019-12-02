@@ -15,7 +15,9 @@ class QuizHome extends Component {
     return (
       <React.Fragment>
         {this.state.categories.map(category => {
-          return <QuizCard name={category.name} id={category.id} />;
+          return (
+            <QuizCard key={category.id} name={category.name} id={category.id} />
+          );
         })}
       </React.Fragment>
     );

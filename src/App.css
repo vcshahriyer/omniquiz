@@ -8,7 +8,13 @@ nav.navbar {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
+}
+.wrong {
+  color: red;
+}
+.correct {
+  color: green;
 }
 .card {
   margin: 0em 2.5em 1em 2.5em;

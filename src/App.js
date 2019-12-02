@@ -15,7 +15,8 @@ function App() {
       <main className="container">
         <Switch>
           <Route path="/" exact component={QuizHome} />
-          <Route path="/quiz" exact component={MultipleChoice} />
+          <Route path="/quiz/:id" exact component={MultipleChoice} />
+          <Route path="/not-found" exact component={QuizHome} />
         </Switch>
       </main>
     </React.Fragment>

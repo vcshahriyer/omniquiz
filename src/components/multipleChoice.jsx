@@ -1,45 +1,73 @@
 import React, { Component } from "react";
+import { getQuestions } from "../service/quizService";
 
 class MultipleChoice extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      questions: [],
+      currentQuestion: {},
+      options: []
+    };
   }
+
+  makeOptions(currentQst) {
+    const qst = [currentQst.correct_answer, ...currentQst.incorrect_answers];
+    qst.sort(function(a, b) {
+      return 0.5 - Math.random();
+    });
+    return qst;
+  }
+  async componentDidMount() {
+    try {
+      const categoryId = this.props.match.params.id;
+      const { data } = await getQuestions(categoryId);
+      const firstQuestion = data.results[0];
+      this.setState({
+        questions: data.results,
+        currentQuestion: firstQuestion,
+        options: this.makeOptions(firstQuestion)
+      });
+      console.log(this.state.questions);
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404) {
+        return this.props.history.replace("/not-found");
+      }
+    }
+  }
+
+  handleNextQuestion = () => {
+    const { questions, currentQuestion } = this.state;
+    const index = questions.indexOf(currentQuestion) + 1;
+    this.setState({ currentQuestion: questions[index] });
+  };
+
   render() {
+    const { currentQuestion, options } = this.state;
+
     return (
       <React.Fragment>
         <div className="quiz-box">
-          <h3>This is an example Quiz Question ?</h3>
+          <h3>{currentQuestion.question}</h3>
           <div className="quiz-options row">
             <div className="col-sm-6">
-              <div className="quiz-option">
-                a) First option Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Consequuntur fuga deserunt vitae doloribus
-                debitis, maiores eveniet temporibus dicta est fugiat, neque
-                cumque rerum. Quidem non at, velit ullam laborum ipsam?
-              </div>
-              <div className="quiz-option">
-                b) Second option Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Vel quae animi maxime magni doloribus fugit
-                tenetur quam est ullam, atque illo deserunt debitis commodi
-                reiciendis pariatur ut dolorum facere! Perferendis.
-              </div>
+              <div className="quiz-option">a) {options[0]}</div>
+              <div className="quiz-option">c) {options[1]}</div>
             </div>
             <div className="col-sm-6">
-              <div className="quiz-option">
-                c) Third option Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Aliquid nesciunt fuga quas soluta neque
-                cupiditate ipsam, hic esse aspernatur dignissimos laudantium
-                similique, dolore ullam. A at quibusdam alias veritatis aperiam!
-              </div>
-              <div className="quiz-option">
-                d) Fourth option Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Cumque, omnis modi voluptatibus, nisi eveniet
-                voluptatem ipsa aliquam sunt maiores incidunt rerum. Aut libero
-                debitis repellat blanditiis facere, optio labore nisi?
-              </div>
+              <div className="quiz-option">b) {options[2]}</div>
+              <div className="quiz-option">d) {options[3]}</div>
             </div>
           </div>
+          <button
+            onClick={() => {
+              this.handleNextQuestion();
+            }}
+            className="btn btn-info ml-auto"
+            type="button"
+          >
+            Next Question
+          </button>
         </div>
       </React.Fragment>
     );
