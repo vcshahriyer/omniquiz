@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import logo from "../logo.png";
 import DropDownMenu from "./common/dropDownMenu";
 
@@ -21,8 +22,12 @@ class NavMenu extends Component {
             <Button variant="outline-success">Search</Button>
           </Form>
           <Nav className="ml-auto mr-3">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <NavLink className="nav-link" to="/">
+              Home
+            </NavLink>
+            <NavLink className="nav-link" to="/quiz">
+              Quiz
+            </NavLink>
             <DropDownMenu />
           </Nav>
         </Navbar.Collapse>

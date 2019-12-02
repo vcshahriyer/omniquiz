@@ -1,20 +1,23 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import NavMenu from "./components/navBar";
-import QuizCard from "./components/common/quizCard";
+import QuizHome from "./components/QuizHome";
+import MultipleChoice from "./components/multipleChoice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
   return (
     <React.Fragment>
+      <ToastContainer />
       <NavMenu />
-      <div className="container">
-        <QuizCard />
-        <QuizCard />
-        <QuizCard />
-        <QuizCard />
-        <QuizCard />
-      </div>
+      <main className="container">
+        <Switch>
+          <Route path="/" exact component={QuizHome} />
+          <Route path="/quiz" exact component={MultipleChoice} />
+        </Switch>
+      </main>
     </React.Fragment>
   );
 }
