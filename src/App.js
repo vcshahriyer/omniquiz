@@ -5,6 +5,7 @@ import NavMenu from "./components/navBar";
 import QuizHome from "./components/QuizHome";
 import MultipleChoice from "./components/multipleChoice";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
