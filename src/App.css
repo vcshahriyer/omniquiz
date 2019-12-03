@@ -29,6 +29,16 @@ nav.navbar {
 .quiz-option {
   margin: 1.5em 0;
   padding: 5px 0;
+  cursor: pointer;
+}
+.quiz-options.row {
+  margin-left: unset;
+}
+.score-box h1 {
+  color: #fe9f59;
+}
+.score-box img {
+  width: 85%;
 }
 .App {
   text-align: center;

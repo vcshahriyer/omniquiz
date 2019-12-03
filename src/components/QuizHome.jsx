@@ -10,6 +10,13 @@ class QuizHome extends Component {
     const { data } = await getCategory();
     this.setState({ categories: data.trivia_categories });
   }
+  handleSearch = query => {
+    let category = [...this.state.categories];
+    category = category.filter(c =>
+      c.name.toLowerCase().startsWith(query.toLowerCase())
+    );
+    this.setState({ categories: category });
+  };
 
   render() {
     return (

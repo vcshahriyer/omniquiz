@@ -12,7 +12,7 @@ class NavMenu extends Component {
   render() {
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img src={logo} alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -25,8 +25,8 @@ class NavMenu extends Component {
             <NavLink className="nav-link" to="/">
               Home
             </NavLink>
-            <NavLink className="nav-link" to="/quiz">
-              Quiz
+            <NavLink className="nav-link" to="/quiz/random">
+              Random Quiz
             </NavLink>
             <DropDownMenu />
           </Nav>

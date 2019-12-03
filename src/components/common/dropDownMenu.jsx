@@ -16,7 +16,7 @@ class DropDownMenu extends Component {
     return (
       <div className={this.state.toggle ? "vc-dropdown" : "vc-dropdown show"}>
         <span className="dropdown-toggle nav-link" onClick={this.handleToggle}>
-          Dropdown
+          Account
         </span>
         <div className="vc-dropdown-menu">
           <a className="dropdown-item" href="/">

@@ -10,26 +10,37 @@ class MultipleChoice extends Component {
     this.state = {
       questions: [],
       currentQuestion: {},
-      options: []
+      options: [],
+      score: 0,
+      clicked: false,
+      optionElements: [
+        { id: 0, label: "A) ", class: "col-sm-6 quiz-option" },
+        { id: 1, label: "B) ", class: "col-sm-6 quiz-option" },
+        { id: 2, label: "C) ", class: "col-sm-6 quiz-option" },
+        { id: 3, label: "D) ", class: "col-sm-6 quiz-option" }
+      ]
     };
   }
 
   makeOptions(currentQst) {
-    const qst = [currentQst.correct_answer, ...currentQst.incorrect_answers];
-    qst.sort(function(a, b) {
+    const options = [
+      currentQst.correct_answer,
+      ...currentQst.incorrect_answers
+    ];
+    options.sort(function(a, b) {
       return 0.5 - Math.random();
     });
-    return qst;
+    return options;
   }
   async componentDidMount() {
     try {
+      this.state.optionElCopy = [...this.state.optionElements];
       const categoryId = this.props.match.params.id;
       const { data } = await getQuestions(categoryId);
       const firstQuestion = data.results[0];
       if (data.response_code)
         throw new Error("No question found for this category");
       this.setState({
-        res: data,
         questions: data.results,
         currentQuestion: firstQuestion,
         options: this.makeOptions(firstQuestion)
@@ -46,11 +57,45 @@ class MultipleChoice extends Component {
   handleNextQuestion = () => {
     const { questions, currentQuestion } = this.state;
     const index = questions.indexOf(currentQuestion) + 1;
-    this.setState({ currentQuestion: questions[index] });
+    if (index >= questions.length) {
+      return this.props.history.push(`/score/${this.state.score}`);
+    }
+    const newQuestion = questions[index];
+    const options = this.makeOptions(newQuestion);
+    this.setState({
+      currentQuestion: newQuestion,
+      options,
+      clicked: false,
+      optionElements: this.state.optionElCopy
+    });
   };
-
+  handleSelect = (el, value) => {
+    const { currentQuestion, clicked } = this.state;
+    let arr = [...this.state.optionElements];
+    const index = arr.indexOf(el);
+    if (clicked === false && value === currentQuestion.correct_answer) {
+      arr[index] = { ...arr[index], class: "col-sm-6 quiz-option correct" };
+      this.setState({
+        score: this.state.score + 1,
+        clicked: true,
+        optionElements: arr
+      });
+    } else {
+      if (clicked === false) {
+        arr[index] = {
+          ...arr[index],
+          class: "col-sm-6 quiz-option wrong"
+        };
+      }
+      this.setState({
+        clicked: true,
+        optionElements: arr
+      });
+      toast.success("Correct Answer: " + currentQuestion.correct_answer);
+    }
+  };
   render() {
-    const { currentQuestion, options } = this.state;
+    const { currentQuestion, options, score, optionElements } = this.state;
     return (
       <React.Fragment>
         {_.isEmpty(currentQuestion) ? (
@@ -68,16 +113,19 @@ class MultipleChoice extends Component {
           </ButtonToolbar>
         ) : (
           <div className="quiz-box">
-            <h3>{currentQuestion.question}</h3>
             <div className="quiz-options row">
-              <div className="col-sm-6">
-                <div className="quiz-option">a) {options[0]}</div>
-                <div className="quiz-option">c) {options[1]}</div>
-              </div>
-              <div className="col-sm-6">
-                <div className="quiz-option">b) {options[2]}</div>
-                <div className="quiz-option">d) {options[3]}</div>
-              </div>
+              <h3>{currentQuestion.question}</h3>
+              {optionElements.map(option => (
+                <div
+                  key={option.id}
+                  className={option.class}
+                  onClick={() => {
+                    this.handleSelect(option, options[option.id]);
+                  }}
+                >
+                  {option.label + options[option.id]}
+                </div>
+              ))}
             </div>
             <button
               onClick={() => {
@@ -88,6 +136,9 @@ class MultipleChoice extends Component {
             >
               Next Question
             </button>
+            <span className="badge badge-pill badge-success ml-5">
+              Score: {score}
+            </span>
           </div>
         )}
       </React.Fragment>

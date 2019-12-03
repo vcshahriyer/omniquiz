@@ -12,8 +12,8 @@ const QuizCard = ({ name, id }) => {
           <Link to={`/quiz/${id}`}>{name}</Link>
         </Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          The Open Trivia Database provides a completely free JSON API of
+          multiple choice Questions .
         </Card.Text>
         Best Score:
         <ProgressBar striped variant="success" now={20} label={"20%"} />
