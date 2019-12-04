@@ -21,6 +21,7 @@ nav.navbar {
 }
 .quiz-box {
   margin-top: 2.5em;
+  margin-bottom: 2em;
   color: #fff;
 }
 .quiz-options {
@@ -42,6 +43,18 @@ nav.navbar {
 }
 .score-box img {
   width: 85%;
+}
+.searchbox {
+  margin: 40px 50%;
+}
+.searchbox .input-group-text {
+  color: #000000;
+  background-color: #f7df34;
+  border: 1px solid #191d21;
+}
+.searchbox .form-control {
+  color: #07132c;
+  border: 1px solid #282c34;
 }
 .App {
   text-align: center;
