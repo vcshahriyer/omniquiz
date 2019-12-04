@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/omniquiz/precache-manifest.e912a214619667e16c9c6d31a88fb4d2.js"
+  "/omniquiz/precache-manifest.6b21348d9b2894b432c1a874a4f13460.js"
 );
 
 self.addEventListener('message', (event) => {
