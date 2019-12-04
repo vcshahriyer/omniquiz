@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/omniquiz/static/css/main.64273898.chunk.css",
-    "main.js": "/omniquiz/static/js/main.8f3c2a82.chunk.js",
-    "main.js.map": "/omniquiz/static/js/main.8f3c2a82.chunk.js.map",
+    "main.js": "/omniquiz/static/js/main.3b19b248.chunk.js",
+    "main.js.map": "/omniquiz/static/js/main.3b19b248.chunk.js.map",
     "runtime-main.js": "/omniquiz/static/js/runtime-main.c7188865.js",
     "runtime-main.js.map": "/omniquiz/static/js/runtime-main.c7188865.js.map",
     "static/css/2.6771fd38.chunk.css": "/omniquiz/static/css/2.6771fd38.chunk.css",
-    "static/js/2.0341ac37.chunk.js": "/omniquiz/static/js/2.0341ac37.chunk.js",
-    "static/js/2.0341ac37.chunk.js.map": "/omniquiz/static/js/2.0341ac37.chunk.js.map",
+    "static/js/2.923a621a.chunk.js": "/omniquiz/static/js/2.923a621a.chunk.js",
+    "static/js/2.923a621a.chunk.js.map": "/omniquiz/static/js/2.923a621a.chunk.js.map",
     "index.html": "/omniquiz/index.html",
-    "precache-manifest.422924a1e5f9600e03096652f89e43a2.js": "/omniquiz/precache-manifest.422924a1e5f9600e03096652f89e43a2.js",
+    "precache-manifest.2ddeceb3627c89623927183cfaa6e147.js": "/omniquiz/precache-manifest.2ddeceb3627c89623927183cfaa6e147.js",
     "service-worker.js": "/omniquiz/service-worker.js",
     "static/css/2.6771fd38.chunk.css.map": "/omniquiz/static/css/2.6771fd38.chunk.css.map",
     "static/css/main.64273898.chunk.css.map": "/omniquiz/static/css/main.64273898.chunk.css.map",
@@ -18,8 +18,8 @@
   "entrypoints": [
     "static/js/runtime-main.c7188865.js",
     "static/css/2.6771fd38.chunk.css",
-    "static/js/2.0341ac37.chunk.js",
+    "static/js/2.923a621a.chunk.js",
     "static/css/main.64273898.chunk.css",
-    "static/js/main.8f3c2a82.chunk.js"
+    "static/js/main.3b19b248.chunk.js"
   ]
 }

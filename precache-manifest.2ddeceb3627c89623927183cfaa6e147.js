@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e1d443f7be83379963b32134bd38c2a1",
+    "revision": "e8e8c7d9b1ef86648ee660849c1d3588",
     "url": "/omniquiz/index.html"
   },
   {
-    "revision": "b01d864cfb0d4e823a71",
+    "revision": "39070fb6cc3535848c45",
     "url": "/omniquiz/static/css/2.6771fd38.chunk.css"
   },
   {
-    "revision": "c202e99aa055ed9b8967",
+    "revision": "570a027f478a3744c739",
     "url": "/omniquiz/static/css/main.64273898.chunk.css"
   },
   {
-    "revision": "b01d864cfb0d4e823a71",
-    "url": "/omniquiz/static/js/2.0341ac37.chunk.js"
+    "revision": "39070fb6cc3535848c45",
+    "url": "/omniquiz/static/js/2.923a621a.chunk.js"
   },
   {
-    "revision": "c202e99aa055ed9b8967",
-    "url": "/omniquiz/static/js/main.8f3c2a82.chunk.js"
+    "revision": "570a027f478a3744c739",
+    "url": "/omniquiz/static/js/main.3b19b248.chunk.js"
   },
   {
     "revision": "8588049e8aea4c81dff3",
