@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import getImage from "../../service/fakeImageService";
 const QuizCard = ({ name, id }) => {
+  const prefix = process.env.REACT_APP_CARD_IMG_URL;
   return (
-    <figure class="Qcard">
-      <div class="image">
-        <img src={getImage(id)} alt="pr-sample23" />
+    <figure className="Qcard">
+      <div className="image">
+        <img src={prefix + getImage(id)} alt="pr-sample23" />
       </div>
       <figcaption>
-        <div class="date">
-          <span class="day">10</span>
-          <span class="month">MCQ</span>
+        <div className="date">
+          <span className="day">10</span>
+          <span className="month">MCQ</span>
         </div>
         <h3>{name}</h3>
         <p>
