@@ -29,7 +29,7 @@ class QuizHome extends Component {
     const categories = this.getPageData();
     return (
       <React.Fragment>
-        <div className="col-md-5 searchbox">
+        <div className="col-9 col-md-5 searchbox">
           <div className="input-group input-group-lg">
             <div className="input-group-prepend">
               <span className="input-group-text" id="inputGroup-sizing-lg">

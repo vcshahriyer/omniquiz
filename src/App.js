@@ -18,7 +18,7 @@ function App() {
       <main className="container">
         <Switch>
           <Route path="/quiz/:id" exact component={MultipleChoice} />
-          <Route path="/score/:score" exact component={FinalScore} />} />
+          <Route path="/score/:score" exact component={FinalScore} />
           <Route path="/" exact component={QuizHome} />
           <Route path="/not-found" exact component={NotFound} />
           <Redirect to="/not-found" />

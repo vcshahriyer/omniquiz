@@ -1,24 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ProgressBar } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-
+import getImage from "../../service/fakeImageService";
 const QuizCard = ({ name, id }) => {
   return (
-    <Card border="info" style={{ width: "18rem" }}>
-      <Card.Header>10 Multiple Choice Question</Card.Header>
-      <Card.Body>
-        <Card.Title>
-          <Link to={`/quiz/${id}`}>{name}</Link>
-        </Card.Title>
-        <Card.Text>
+    <figure class="Qcard">
+      <div class="image">
+        <img src={getImage(id)} alt="pr-sample23" />
+      </div>
+      <figcaption>
+        <div class="date">
+          <span class="day">10</span>
+          <span class="month">MCQ</span>
+        </div>
+        <h3>{name}</h3>
+        <p>
           The Open Trivia Database provides a completely free JSON API of
           multiple choice Questions .
-        </Card.Text>
-        Best Score:
-        <ProgressBar striped variant="success" now={20} label={"20%"} />
-      </Card.Body>
-    </Card>
+        </p>
+      </figcaption>
+      <Link to={`/quiz/${id}`} />
+    </figure>
   );
 };
 
