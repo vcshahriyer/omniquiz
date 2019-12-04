@@ -31,6 +31,9 @@ nav.navbar {
   padding: 5px 0;
   cursor: pointer;
 }
+.quiz-option:hover {
+  text-decoration: underline;
+}
 .quiz-options.row {
   margin-left: unset;
 }

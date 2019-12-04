@@ -17,9 +17,9 @@ function App() {
       <NavMenu />
       <main className="container">
         <Switch>
-          <Route path="/" exact component={QuizHome} />
           <Route path="/quiz/:id" exact component={MultipleChoice} />
           <Route path="/score/:score" exact component={FinalScore} />} />
+          <Route path="/" exact component={QuizHome} />
           <Route path="/not-found" exact component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>

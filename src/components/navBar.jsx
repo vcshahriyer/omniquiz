@@ -12,9 +12,9 @@ class NavMenu extends Component {
   render() {
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">
+        <NavLink className="navbar-brand" to="/">
           <img src={logo} alt="" />
-        </Navbar.Brand>
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Form inline>
@@ -22,7 +22,15 @@ class NavMenu extends Component {
             <Button variant="outline-success">Search</Button>
           </Form>
           <Nav className="ml-auto mr-3">
-            <NavLink className="nav-link" to="/">
+            <NavLink
+              className="nav-link"
+              to="/"
+              isActive={match => {
+                if (!match) {
+                  return false;
+                }
+              }}
+            >
               Home
             </NavLink>
             <NavLink className="nav-link" to="/quiz/random">
