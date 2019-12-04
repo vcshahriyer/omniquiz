@@ -114,7 +114,9 @@ class MultipleChoice extends Component {
         ) : (
           <div className="quiz-box">
             <div className="quiz-options row">
-              <h3>{currentQuestion.question}</h3>
+              <cdiv className="col-md-12">
+                <h3>{currentQuestion.question}</h3>
+              </cdiv>
               {optionElements.map(option => (
                 <div
                   key={option.id}
