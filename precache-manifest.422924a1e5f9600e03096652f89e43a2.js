@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "151d14177d65762cb57ef61f14f2b645",
+    "revision": "e1d443f7be83379963b32134bd38c2a1",
     "url": "/omniquiz/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/omniquiz/static/css/2.6771fd38.chunk.css"
   },
   {
-    "revision": "8c155ce681d7b9769215",
+    "revision": "c202e99aa055ed9b8967",
     "url": "/omniquiz/static/css/main.64273898.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/omniquiz/static/js/2.0341ac37.chunk.js"
   },
   {
-    "revision": "8c155ce681d7b9769215",
-    "url": "/omniquiz/static/js/main.51067047.chunk.js"
+    "revision": "c202e99aa055ed9b8967",
+    "url": "/omniquiz/static/js/main.8f3c2a82.chunk.js"
   },
   {
     "revision": "8588049e8aea4c81dff3",
