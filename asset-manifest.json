@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/omniquiz/static/css/main.39aa80a2.chunk.css",
+    "main.css": "/omniquiz/static/css/main.82ced184.chunk.css",
     "main.js": "/omniquiz/static/js/main.c79b3316.chunk.js",
     "main.js.map": "/omniquiz/static/js/main.c79b3316.chunk.js.map",
     "runtime-main.js": "/omniquiz/static/js/runtime-main.c7188865.js",
@@ -9,17 +9,17 @@
     "static/js/2.053b633c.chunk.js": "/omniquiz/static/js/2.053b633c.chunk.js",
     "static/js/2.053b633c.chunk.js.map": "/omniquiz/static/js/2.053b633c.chunk.js.map",
     "index.html": "/omniquiz/index.html",
-    "precache-manifest.4706dc15bedcfd3eb0ed850a44765ec8.js": "/omniquiz/precache-manifest.4706dc15bedcfd3eb0ed850a44765ec8.js",
+    "precache-manifest.6b6b2ca5855f8eb8b962a64a77e132fd.js": "/omniquiz/precache-manifest.6b6b2ca5855f8eb8b962a64a77e132fd.js",
     "service-worker.js": "/omniquiz/service-worker.js",
     "static/css/2.6771fd38.chunk.css.map": "/omniquiz/static/css/2.6771fd38.chunk.css.map",
-    "static/css/main.39aa80a2.chunk.css.map": "/omniquiz/static/css/main.39aa80a2.chunk.css.map",
+    "static/css/main.82ced184.chunk.css.map": "/omniquiz/static/css/main.82ced184.chunk.css.map",
     "static/media/party.png": "/omniquiz/static/media/party.2e052da9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c7188865.js",
     "static/css/2.6771fd38.chunk.css",
     "static/js/2.053b633c.chunk.js",
-    "static/css/main.39aa80a2.chunk.css",
+    "static/css/main.82ced184.chunk.css",
     "static/js/main.c79b3316.chunk.js"
   ]
 }
