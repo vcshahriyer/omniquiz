@@ -51,6 +51,9 @@ nav.navbar {
   font-family: cursive;
   font-size: 17px;
 }
+.countdown {
+  margin-bottom: 30px;
+}
 .score-box h1 {
   color: #fe9f59;
 }

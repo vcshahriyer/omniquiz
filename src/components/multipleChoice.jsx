@@ -21,7 +21,9 @@ class MultipleChoice extends Component {
         { id: 1, label: "B) ", class: "col-sm-6 quiz-option" },
         { id: 2, label: "C) ", class: "col-sm-6 quiz-option" },
         { id: 3, label: "D) ", class: "col-sm-6 quiz-option" }
-      ]
+      ],
+      restart: true,
+      questionNum: 1
     };
   }
 
@@ -82,7 +84,9 @@ class MultipleChoice extends Component {
       currentQuestion: newQuestion,
       options,
       clicked: false,
-      optionElements: this.state.optionElCopy
+      optionElements: this.state.optionElCopy,
+      restart: !this.state.restart,
+      questionNum: index + 1
     });
   };
   handleSelect = (el, value) => {
@@ -114,7 +118,14 @@ class MultipleChoice extends Component {
     }
   };
   render() {
-    const { currentQuestion, options, score, optionElements } = this.state;
+    const {
+      currentQuestion,
+      options,
+      score,
+      optionElements,
+      restart,
+      questionNum
+    } = this.state;
     return (
       <React.Fragment>
         {_.isEmpty(currentQuestion) ? (
@@ -134,7 +145,10 @@ class MultipleChoice extends Component {
           <div className="quiz-box">
             <div className="quiz-options row">
               <div className="col-md-12 question">
-                <h3>{utf8.decode(base64.decode(currentQuestion.question))}</h3>
+                <h3>
+                  {questionNum}:{" "}
+                  {utf8.decode(base64.decode(currentQuestion.question))}
+                </h3>
               </div>
               <div className="col-sm-10">
                 <div className="row">
@@ -161,7 +175,8 @@ class MultipleChoice extends Component {
                     }}
                     renderTime={this.renderTime}
                     isPlaying
-                    durationSeconds={10}
+                    durationSeconds={30}
+                    key={restart}
                     strokeWidth={5}
                     size={130}
                     colors={[
