@@ -3,6 +3,7 @@ import _ from "lodash";
 import { toast } from "react-toastify";
 import { Button, ButtonToolbar, Spinner } from "react-bootstrap";
 import { getQuestions } from "../service/quizService";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import base64 from "base-64";
 import utf8 from "utf8";
 
@@ -34,6 +35,19 @@ class MultipleChoice extends Component {
     });
     return options;
   }
+  renderTime = value => {
+    if (value === 1) {
+      return <div className="timer text">Too lale...</div>;
+    }
+
+    return (
+      <div className="timer">
+        <div className="text">Remaining</div>
+        <div className="value">{value}</div>
+        <div className="text">seconds</div>
+      </div>
+    );
+  };
   async componentDidMount() {
     try {
       this.state.optionElCopy = [...this.state.optionElements];
@@ -86,7 +100,7 @@ class MultipleChoice extends Component {
       if (clicked === false) {
         arr[index] = {
           ...arr[index],
-          class: "col-sm-6 quiz-option wrong"
+          class: "col-sm-5 quiz-option wrong"
         };
       }
       this.setState({
@@ -101,7 +115,6 @@ class MultipleChoice extends Component {
   };
   render() {
     const { currentQuestion, options, score, optionElements } = this.state;
-    // console.log(base64.decode("VG8gS2lsbCBhIE1vY2tpbmdiaXJk"));
     return (
       <React.Fragment>
         {_.isEmpty(currentQuestion) ? (
@@ -123,18 +136,42 @@ class MultipleChoice extends Component {
               <div className="col-md-12 question">
                 <h3>{utf8.decode(base64.decode(currentQuestion.question))}</h3>
               </div>
-              {optionElements.map(option => (
-                <div
-                  key={option.id}
-                  className={option.class}
-                  onClick={() => {
-                    this.handleSelect(option, options[option.id]);
-                  }}
-                >
-                  {option.label +
-                    utf8.decode(base64.decode(options[option.id]))}
+              <div className="col-sm-10">
+                <div className="row">
+                  {optionElements.map(option => (
+                    <div
+                      key={option.id}
+                      className={option.class}
+                      onClick={() => {
+                        this.handleSelect(option, options[option.id]);
+                      }}
+                    >
+                      {option.label +
+                        utf8.decode(base64.decode(options[option.id]))}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="col-sm-2">
+                <div className="countdown">
+                  <CountdownCircleTimer
+                    onComplete={() => {
+                      this.handleNextQuestion();
+                      return [true, 100];
+                    }}
+                    renderTime={this.renderTime}
+                    isPlaying
+                    durationSeconds={10}
+                    strokeWidth={5}
+                    size={130}
+                    colors={[
+                      ["#009432", 0.73],
+                      ["#32ff7e", 0.1],
+                      ["#ff5252", 0.11]
+                    ]}
+                  />
+                </div>
+              </div>
             </div>
             <button
               onClick={() => {
