@@ -3,6 +3,8 @@ import _ from "lodash";
 import { toast } from "react-toastify";
 import { Button, ButtonToolbar, Spinner } from "react-bootstrap";
 import { getQuestions } from "../service/quizService";
+import base64 from "base-64";
+import utf8 from "utf8";
 
 class MultipleChoice extends Component {
   constructor(props) {
@@ -91,11 +93,15 @@ class MultipleChoice extends Component {
         clicked: true,
         optionElements: arr
       });
-      toast.success("Correct Answer: " + currentQuestion.correct_answer);
+      toast.error(
+        "Correct Answer: " +
+          utf8.decode(base64.decode(currentQuestion.correct_answer))
+      );
     }
   };
   render() {
     const { currentQuestion, options, score, optionElements } = this.state;
+    // console.log(base64.decode("VG8gS2lsbCBhIE1vY2tpbmdiaXJk"));
     return (
       <React.Fragment>
         {_.isEmpty(currentQuestion) ? (
@@ -115,7 +121,7 @@ class MultipleChoice extends Component {
           <div className="quiz-box">
             <div className="quiz-options row">
               <div className="col-md-12 question">
-                <h3>{currentQuestion.question}</h3>
+                <h3>{utf8.decode(base64.decode(currentQuestion.question))}</h3>
               </div>
               {optionElements.map(option => (
                 <div
@@ -125,7 +131,8 @@ class MultipleChoice extends Component {
                     this.handleSelect(option, options[option.id]);
                   }}
                 >
-                  {option.label + options[option.id]}
+                  {option.label +
+                    utf8.decode(base64.decode(options[option.id]))}
                 </div>
               ))}
             </div>
@@ -133,13 +140,14 @@ class MultipleChoice extends Component {
               onClick={() => {
                 this.handleNextQuestion();
               }}
-              className="btn btn-info ml-auto"
+              className="btn btn-outline-secondary ml-auto"
               type="button"
             >
               Next Question
             </button>
-            <span className="badge badge-pill badge-success ml-5">
-              Score: {score}
+            <span className="scorepill ml-5">
+              <span className="score">Score: </span>
+              <span className="count">{score}</span>
             </span>
           </div>
         )}

@@ -59,27 +59,13 @@ nav.navbar {
   color: #07132c;
   border: 1px solid #282c34;
 }
-.App {
-  text-align: center;
+span.score {
+  font-size: 1.2em;
+  font-family: cursive;
+  color: #ffe94f;
 }
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+span.count {
+  color: #00c216;
 }
 /* ========= Custom Quiz Card =========== */
 .Qcard {
@@ -141,7 +127,7 @@ nav.navbar {
   z-index: -1;
 }
 
-.Qcard .date {
+.Qcard .circle {
   background-color: #fff;
   border-radius: 50%;
   color: #700877;
@@ -157,12 +143,12 @@ nav.navbar {
   top: -25px;
 }
 
-.Qcard .date span {
+.Qcard .circle span {
   display: block;
   line-height: 14px;
 }
 
-.Qcard .date .month {
+.Qcard .circle .month {
   font-size: 11px;
 }
 

@@ -9,7 +9,7 @@ const QuizCard = ({ name, id }) => {
         <img src={prefix + getImage(id)} alt="pr-sample23" />
       </div>
       <figcaption>
-        <div className="date">
+        <div className="circle">
           <span className="day">10</span>
           <span className="month">MCQ</span>
         </div>

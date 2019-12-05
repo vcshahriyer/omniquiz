@@ -7,10 +7,10 @@ export function getCategory() {
 export function getQuestions(id) {
   if (id === "random") {
     return http.get(
-      "https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple"
+      "https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple&encode=base64"
     );
   }
   return http.get(
-    `https://opentdb.com/api.php?amount=10&category=${id}&difficulty=easy&type=multiple`
+    `https://opentdb.com/api.php?amount=10&category=${id}&difficulty=easy&type=multiple&encode=base64`
   );
 }
