@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/omniquiz/static/css/main.82ced184.chunk.css",
-    "main.js": "/omniquiz/static/js/main.3020a53e.chunk.js",
-    "main.js.map": "/omniquiz/static/js/main.3020a53e.chunk.js.map",
+    "main.js": "/omniquiz/static/js/main.e6c8b54b.chunk.js",
+    "main.js.map": "/omniquiz/static/js/main.e6c8b54b.chunk.js.map",
     "runtime-main.js": "/omniquiz/static/js/runtime-main.c7188865.js",
     "runtime-main.js.map": "/omniquiz/static/js/runtime-main.c7188865.js.map",
     "static/css/2.6771fd38.chunk.css": "/omniquiz/static/css/2.6771fd38.chunk.css",
     "static/js/2.053b633c.chunk.js": "/omniquiz/static/js/2.053b633c.chunk.js",
     "static/js/2.053b633c.chunk.js.map": "/omniquiz/static/js/2.053b633c.chunk.js.map",
     "index.html": "/omniquiz/index.html",
-    "precache-manifest.9fa6ce1ee81b0200aa9d1abd5c737aab.js": "/omniquiz/precache-manifest.9fa6ce1ee81b0200aa9d1abd5c737aab.js",
+    "precache-manifest.e51e025344d366af6bdd9346ac57000f.js": "/omniquiz/precache-manifest.e51e025344d366af6bdd9346ac57000f.js",
     "service-worker.js": "/omniquiz/service-worker.js",
     "static/css/2.6771fd38.chunk.css.map": "/omniquiz/static/css/2.6771fd38.chunk.css.map",
     "static/css/main.82ced184.chunk.css.map": "/omniquiz/static/css/main.82ced184.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.6771fd38.chunk.css",
     "static/js/2.053b633c.chunk.js",
     "static/css/main.82ced184.chunk.css",
-    "static/js/main.3020a53e.chunk.js"
+    "static/js/main.e6c8b54b.chunk.js"
   ]
 }
