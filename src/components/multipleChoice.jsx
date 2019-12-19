@@ -177,11 +177,11 @@ class MultipleChoice extends Component {
                     isPlaying
                     durationSeconds={30}
                     key={restart}
-                    strokeWidth={5}
+                    strokeWidth={3}
                     size={130}
                     colors={[
-                      ["#009432", 0.73],
-                      ["#32ff7e", 0.1],
+                      ["#32ff7e", 0.73],
+                      ["#009432", 0.1],
                       ["#ff5252", 0.11]
                     ]}
                   />
